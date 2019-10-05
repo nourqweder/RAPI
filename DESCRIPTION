@@ -1,0 +1,25 @@
+Package: RAPI
+Type: Package
+Title: get place by COORDINATOR OR DEPENDEING ON CSV FILE
+Version: 1.0
+Date: 2019-09-19
+Author: c(person("Nour", "Qweder", role = c("aut", "cre"),
+                     email = "nouqw898@student.liu.se"),
+              person("Young", "Lee", role = "aut",
+                     email = "joole336@student.liu.se"),
+              person("Samia", "Butt", role = "aut",
+                     email = "sambu064@student.liu.se"))
+Maintainer: Who to complain to <nouqw898@student.liu.se>
+Description: in this R lab we are trying to implement A linear regression as a package.
+License: GPL-3
+RoxygenNote: 6.1.99.9000
+Depends: R (>= 3.3.0)
+LazyData: true
+Encoding: UTF-8
+Suggests: testthat,
+    knitr,
+    rmarkdown,
+    testthat,
+    covr
+Imports: ggplot2
+VignetteBuilder: knitr
