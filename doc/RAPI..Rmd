@@ -1,13 +1,13 @@
 ---
-  title: "RAPI"
+title: "RAPI"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Lab4AdvR}
-%\VignetteEngine{knitr::rmarkdown}
-%\VignetteEncoding{UTF-8}
+  %\VignetteIndexEntry{RAPI}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
-  
-  ```{r, include = FALSE}
+
+```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
