@@ -7,11 +7,6 @@
 #' 
 #' @return Load the Data and Prepare It for Mapping
 #' @export readCSVFile
-library(shiny)
-library(leaflet)
-library(dplyr)
-library(tidyr)
-library(tidyverse)
 
 readCSVFile <- function(csvFile="./Data/NYPD_7_Major_Felony_Incidents.csv"){
 df = read.csv(csvFile, stringsAsFactors = F)
