@@ -1,0 +1,25 @@
+---
+  title: "RAPI"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Lab4AdvR}
+%\VignetteEngine{knitr::rmarkdown}
+%\VignetteEncoding{UTF-8}
+---
+  
+  ```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup, include=FALSE}
+library(RAPI)
+```
+
+## How to use:
+
+```{r installation, eval = FALSE}
+devtools::install_github("nourqweder/RAPI")
+```
