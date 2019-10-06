@@ -38,35 +38,3 @@ library(RAPI)
 ```{r installation, eval = FALSE}
 devtools::install_github("nourqweder/RAPI", build_vignettes = TRUE)
 ```
-
-
-## Introduction
- Before start using this package, `ggmap` and `leaflet` package must be installed in order to plot the result of modelling. This packages is created to provide connection between the Google Geocoding API and the users, so that geo-coordinates can be transformed to address, and address can be transformed to geo-cordinates for more efficient detecting position.  With package `leaflet`, the map is drawn, and a few different display mode can be selected.
-
-
-```{r, eval = FALSE}
-#  https://maps.googleapis.com/maps/api/geocode/json?parameters
-```
-
- As above mentioned, `RAPI` works as a  linker between the users and the Google Geocoding API. 
-
-
-## Usage Methods
-
-### geocodeBylatlng
- `geocodeBylatlng(latitude, longitude)` This function is used to find a written address with its' latitude and longitude. Using this function connects user to the Google API; Google API responds by providing where the input geo-coordinates corresponds to. Input values must be numeric values.
-
-
-### getAdressInfoByLocation
- `getAdressInfoByLocation(location)` This function is used to find a geo-coords, which are latitude and longitude of the user-given location. Using this function connects user to the Google API; Google API responds by providing where the input location corresponds to. Input values must be character value.
- 
-
-
-### getInforFromInput
-`getInforFromInput(address)` This function produces data frame that contains latitude, longitude, and written address of the user-given address. This function contains `getAdressInfoByLocation()` in it; putting written address in the function will generate geo-coords as embedded function within this has connection to Google API to detect its latitude and longitude. Input values must be character values.
-
-
-
-
-## References 
-[Advanced R](http://adv-r.had.co.nz/R5.html)
