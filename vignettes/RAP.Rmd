@@ -1,0 +1,35 @@
+---
+title: "Connecting to leaflet API with package RAPI"
+author: "Nour Qweder, Jooyoung Lee, Samia Butt"
+date: "`r Sys.Date()`"
+output: 
+  rmarkdown::html_vignette:
+  toc: true
+
+vignette: >
+  %\VignetteIndexEntry{Connecting to leaflet API with package RAPI package in R}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+
+---
+  ```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+---
+  ```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = TRUE
+)
+```
+
+```{r, include = FALSE}
+library(ggmap)
+library(RAPI)
+```
+
+## Introduction
