@@ -1,25 +1,25 @@
 ---
-title: "Connecting to leaflet API with package RAPI"
+title: "A linear regression in R"
 author: "Nour Qweder, Jooyoung Lee, Samia Butt"
 date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
-  toc: true
+    toc: true
 
 vignette: >
-  %\VignetteIndexEntry{Connecting to leaflet API with package RAPI package in R}
+  %\VignetteIndexEntry{Simulate A linear regression package in R}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 
 ---
-  ```{r, include = FALSE}
+```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 ```
 ---
-  ```{r setup, include = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -28,19 +28,24 @@ knitr::opts_chunk$set(
 ```
 
 ```{r, include = FALSE}
-library(ggmap)
+library(ggmap )
+library(leaflet)
 library(RAPI)
 ```
 
 
-
-## How to use:
-
-
+## How to use
 ```{r installation, eval = FALSE}
 devtools::install_github("nourqweder/RAPI", build_vignettes = TRUE)
 ```
 
+
+
+## Installation 
+
+ Before start using this package, `ggmap and leaflet` package must be installed, in order to plot the result of modelling. This packages is created to make linear regression model with given data. By putting formula and data in the function, the printed result will show the linear relationship between independent variables and dependent variable, which is calculated by using least square method.
+ 
+ 
 
 
 ## Introduction
@@ -52,3 +57,27 @@ Depending on *Google geocode API technique* to get Location by the coordinator a
 ```
 
 Now, our package *RAPI* works as a  linker between the user and the Google Geocoding API. 
+
+
+## Usage Methods
+
+
+
+
+## Data
+
+All fields and methods are stored in reference class of R. Therefore, the data set which is to be examined must be created and stored in the reference class. New data set is assigned to a variable by using function 'classname$new(function, data)'. In the function, dependent variable must be given at first, and after putting ' ~ ', independent variable(s) should be given.
+
+Following is an example:
+  
+`linreg_mod = linreg$new(Petal.Length~Sepal.Width+Sepal.Length, data=iris)`
+
+
+
+
+## References 
+
+[Advanced R](http://adv-r.had.co.nz/R5.html)
+
+ [Linear Regression]('http://r-statistics.co/Linear-Regression.html)
+
