@@ -11,11 +11,12 @@
 #'@title getAddressInfoByLocation
 #'@description Returns latitude and longitude of the given input location.
 #'@param location Character class of location address
+#'@param key need a vaild API key from user
 #'@export
 #'@return A data.frame contains address, latitude and longitude of given location.
 #'@examples
-#'getAddressInfoByLocation("Mjölby")
-#'getAddressInfoByLocation("Damascus University")
+#'getAddressInfoByLocation("Mjölby","AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
+#'getAddressInfoByLocation("Damascus University","AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
 
 getAddressInfoByLocation <- function(location,key) {
 
@@ -24,19 +25,19 @@ getAddressInfoByLocation <- function(location,key) {
   #prepare location data
   location <- gsub(" ","+", location)
 
-  gitURL <- "https://maps.googleapis.com/maps/api/geocode/json?location="
+  gitURL <- "https://maps.googleapis.com/maps/api/geocode/json?address="
 
-  responce <- jsonlite::fromJSON(paste0(gitURL, location, key))
+  #responce <- jsonlite::fromJSON(paste0(gitURL, location, paste0("&key=",key)))
 
-  stopifnot(responce$status == "OK")
+  #stopifnot(responce$status == "OK")
   #location from input
-  cat("Address:", location,"\n\n")
+  #cat("Address:", location,"\n\n")
 
   #summary of the info
-  lat = responce$results[[3]]$location$lat
-  lng = responce$results[[3]]$location$lng
+ # lat = responce$results[[3]]$location$lat
+ # lng = responce$results[[3]]$location$lng
 
-  info <- data.frame(location, lat, lng, stringsAsFactors=FALSE)
+  info <- NULL #data.frame(location, lat=NULL, lng=NULL, stringsAsFactors=FALSE)
 
   return(info)
 

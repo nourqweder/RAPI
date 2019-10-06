@@ -11,7 +11,7 @@
 #'@title geocodeBylatlng
 #'@description Returns address of the given latitude and longitude.
 #'@param latlng Character class of latitude and longitude separated by ","
-#' @param key need a vaild API key from user
+#'@param key need a vaild API key from user
 #'@export
 #'@return Character class of the address of the given latitude and longitude.
 #'@examples
@@ -27,14 +27,14 @@ geocodeBylatlng <- function(latlng,key) {
 
   gitURL <- "https://maps.googleapis.com/maps/api/geocode/json?latlng="
 
-  responce <- jsonlite::fromJSON(paste0(gitURL, latlng, paste0("&key=",key)))
+  #responce <- jsonlite::fromJSON(paste0(gitURL, latlng, paste0("&key=",key)))
 
-  stopifnot(responce$status == "OK")
+  #stopifnot(responce$status == "OK")
   #get lati, long dependenig on google api
-  cat("Input latitude and longitude: ", latlng,"\n\n")
+  #cat("Input latitude and longitude: ", latlng,"\n\n")
 
   #summary of the info
-  address <- responce$results[[2]][1]
-
+ # address <- responce$results[[2]][1]
+  address = NULL
   return(address)
 }
