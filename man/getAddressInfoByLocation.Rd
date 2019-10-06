@@ -4,10 +4,12 @@
 \alias{getAddressInfoByLocation}
 \title{getAddressInfoByLocation}
 \usage{
-getAddressInfoByLocation(location)
+getAddressInfoByLocation(location, key = NULL)
 }
 \arguments{
 \item{location}{Character class of location address}
+
+\item{key}{need a vaild API key from user}
 }
 \value{
 A data.frame contains address, latitude and longitude of given location.
@@ -16,6 +18,6 @@ A data.frame contains address, latitude and longitude of given location.
 Returns latitude and longitude of the given input location.
 }
 \examples{
-getAddressInfoByLocation("Mjölby")
-getAddressInfoByLocation("Damascus University")
+getAddressInfoByLocation("Mjölby","AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
+getAddressInfoByLocation("Damascus University","AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
 }

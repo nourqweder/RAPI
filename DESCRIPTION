@@ -12,14 +12,14 @@ Author: c(person("Nour", "Qweder", role = c("aut", "cre"),
 Maintainer: Who to complain to <nouqw898@student.liu.se>
 Description: in this R lab we are trying to implement A linear regression as a package.
 License: GPL-3
-RoxygenNote: 6.1.99.9000
+RoxygenNote: 6.1.1
 Depends: R (>= 3.3.0)
 LazyData: true
 Encoding: UTF-8
-Suggests: testthat,
-    knitr,
-    rmarkdown,
+Suggests: 
     testthat,
-    covr
-Imports: ggplot2
+    covr,
+    knitr,
+    rmarkdown
+Imports: ggplot2,jsonlite,curl,stringr,tidyr
 VignetteBuilder: knitr
