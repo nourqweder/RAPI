@@ -13,8 +13,8 @@ getInforFromInput(address)
 A data.frame containing the resulting \code{longitude/s}, \code{latitude/s} and \code{address/es}
 }
 \description{
-Loops over the vector of addressInfo and/or coordinates, passes each one of them as a parameter 
-to an internal function that connects to the \code{Google Geocoding API} via URL and gets the output. Then it 
+Loops over the vector of addressInfo and/or coordinates, passes each one of them as a parameter
+to an internal function that connects to the \code{Google Geocoding API} via URL and gets the output. Then it
 returns the output of the request into a formatted dataframe with the geocoding information.
 }
 \examples{

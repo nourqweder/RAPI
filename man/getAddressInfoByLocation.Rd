@@ -4,7 +4,7 @@
 \alias{getAddressInfoByLocation}
 \title{getAddressInfoByLocation}
 \usage{
-getAddressInfoByLocation(location, key)
+getAddressInfoByLocation(location, key = NULL)
 }
 \arguments{
 \item{location}{Character class of location address}

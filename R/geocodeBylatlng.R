@@ -27,14 +27,16 @@ geocodeBylatlng <- function(latlng,key) {
 
   gitURL <- "https://maps.googleapis.com/maps/api/geocode/json?latlng="
 
-  #responce <- jsonlite::fromJSON(paste0(gitURL, latlng, paste0("&key=",key)))
+  responce <- jsonlite::fromJSON(paste0(gitURL, latlng, paste0("&key=",key)))
 
-  #stopifnot(responce$status == "OK")
-  #get lati, long dependenig on google api
-  #cat("Input latitude and longitude: ", latlng,"\n\n")
+  if(responce$status != "OK"){
+    #get lati, long dependenig on google api
+    #cat("Input latitude and longitude: ", latlng,"\n\n")
+    address = NULL
+  }else{
+    #summary of the info
+    address <- responce$results[[2]][1]
+  }
 
-  #summary of the info
- # address <- responce$results[[2]][1]
-  address = NULL
   return(address)
 }
