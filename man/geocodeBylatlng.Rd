@@ -18,6 +18,6 @@ Character class of the address of the given latitude and longitude.
 Returns address of the given latitude and longitude.
 }
 \examples{
-geocodeBylatlng("37.56654, 126.978")
-geocodeBylatlng("37.55723, 127.0453")
+geocodeBylatlng("37.56654, 126.978","AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
+geocodeBylatlng("37.55723, 127.0453","AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
 }

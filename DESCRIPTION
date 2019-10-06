@@ -16,10 +16,5 @@ RoxygenNote: 6.1.1
 Depends: R (>= 3.3.0)
 LazyData: true
 Encoding: UTF-8
-Suggests: testthat,
-    knitr,
-    rmarkdown,
-    testthat,
-    covr
-Imports: ggplot2
-VignetteBuilder: knitr
+Suggests: testthat,covr
+Imports: ggplot2,jsonlite,curl,stringr,tidyr

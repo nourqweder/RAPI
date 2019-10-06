@@ -12,33 +12,32 @@
 #'@description Returns latitude and longitude of the given input location.
 #'@param location Character class of location address
 #'@export
-#'@import jsonlite curl
 #'@return A data.frame contains address, latitude and longitude of given location.
-#'@examples 
+#'@examples
 #'getAddressInfoByLocation("Mjölby")
 #'getAddressInfoByLocation("Damascus University")
 
 getAddressInfoByLocation <- function(location,key) {
-  
+
   stopifnot(is.character(location))
-  
+
   #prepare location data
   location <- gsub(" ","+", location)
-  
+
   gitURL <- "https://maps.googleapis.com/maps/api/geocode/json?location="
-  
+
   responce <- jsonlite::fromJSON(paste0(gitURL, location, key))
-  
+
   stopifnot(responce$status == "OK")
   #location from input
   cat("Address:", location,"\n\n")
-  
+
   #summary of the info
   lat = responce$results[[3]]$location$lat
   lng = responce$results[[3]]$location$lng
-  
+
   info <- data.frame(location, lat, lng, stringsAsFactors=FALSE)
-  
+
   return(info)
-  
+
 }
