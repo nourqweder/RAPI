@@ -11,3 +11,7 @@ comment = "#>",
 echo = TRUE
 )
 
+## ---- include = FALSE----------------------------------------------------
+library(ggmap)
+library(RAPI)
+
