@@ -13,7 +13,7 @@ functions that convert adresses into coordinates and vice versa.
 The package provides the following functions:
 \itemize{
    \item \code{geocodeBylatlng}: Get google address according to specific x, y  entered by user
-   \item \code{geocodeByAddress}: Get google x, y according to specific address
+   \item \code{getAddressInfoByLocation}: Get google x, y according to specific address and valid API key
 }
 }
 \references{

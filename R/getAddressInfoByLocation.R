@@ -1,32 +1,44 @@
-#' getAddress Info By Location
-#' 
-#' @description Passes the function parameter \code{address} as a parameter to the API via URL.
-#' Then it returns the output of the request into a formatted dataframe with the geocoding information.
-#' 
-#' 
-#' @param address A character vector with an address or some coordinates (latitude and longitude)
-#' 
-#' @return A data.frame containing the resulting \code{longitude}, \code{latitude} and \code{address}
-#' 
-#' @references 
-#' Google Geocoding API - \url{https://developers.google.com/maps/documentation/geocoding/intro}
+# Google Geocode API
+# API Key: &key=AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w
+#
+# Standard Usage Limits
+# Users of the standard API:
+# 2,500 free requests per day, calculated as the sum of client-side and server-side queries.
+# 50 requests per second, calculated as the sum of client-side and server-side queries.
+#
+# https://maps.googleapis.com/maps/api/geocode/json?address=
 
-getAddressInfoByLocation <- function(address){
+#'@title getAddressInfoByLocation
+#'@description Returns latitude and longitude of the given input location.
+#'@param location Character class of location address
+#'@export
+#'@import jsonlite curl
+#'@return A data.frame contains address, latitude and longitude of given location.
+#'@examples 
+#'getAddressInfoByLocation("Mjölby")
+#'getAddressInfoByLocation("Damascus University")
+
+getAddressInfoByLocation <- function(location,key) {
   
-  library(RCurl)
-  library(rjson)
-  URL <- URLencode(paste("http://maps.google.com/maps/api/geocode/json?address=", address, sep=""))
-  data <- fromJSON(getURL(URL))
-  if (URL.data$status == "OK"){
-    latitude <-data$results[[1]]$geometry$location$lat
-    longitude <-data$results[[1]]$geometry$location$lng
-    address <-data$results[[1]]$address
-  }else{
-    latitude <- 0
-    longitude <- 0
-    address <- "ERROR"
-  } 
-  Info <- data.frame(latitude = latitude, longitude = longitude, address = address, stringsAsFactors = FALSE)
+  stopifnot(is.character(location))
   
-  return(Info)
+  #prepare location data
+  location <- gsub(" ","+", location)
+  
+  gitURL <- "https://maps.googleapis.com/maps/api/geocode/json?location="
+  
+  responce <- jsonlite::fromJSON(paste0(gitURL, location, key))
+  
+  stopifnot(responce$status == "OK")
+  #location from input
+  cat("Address:", location,"\n\n")
+  
+  #summary of the info
+  lat = responce$results[[3]]$location$lat
+  lng = responce$results[[3]]$location$lng
+  
+  info <- data.frame(location, lat, lng, stringsAsFactors=FALSE)
+  
+  return(info)
+  
 }

@@ -2,20 +2,20 @@
 % Please edit documentation in R/getAddressInfoByLocation.R
 \name{getAddressInfoByLocation}
 \alias{getAddressInfoByLocation}
-\title{getAddress Info By Location}
+\title{getAddressInfoByLocation}
 \usage{
-getAddressInfoByLocation(address)
+getAddressInfoByLocation(location, key)
 }
 \arguments{
-\item{address}{A character vector with an address or some coordinates (latitude and longitude)}
+\item{location}{Character class of location address}
 }
 \value{
-A data.frame containing the resulting \code{longitude}, \code{latitude} and \code{address}
+A data.frame contains address, latitude and longitude of given location.
 }
 \description{
-Passes the function parameter \code{address} as a parameter to the API via URL.
-Then it returns the output of the request into a formatted dataframe with the geocoding information.
+Returns latitude and longitude of the given input location.
 }
-\references{
-Google Geocoding API - \url{https://developers.google.com/maps/documentation/geocoding/intro}
+\examples{
+getAddressInfoByLocation("Mjölby")
+getAddressInfoByLocation("Damascus University")
 }
