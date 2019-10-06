@@ -32,4 +32,23 @@ library(ggmap)
 library(RAPI)
 ```
 
+
+
+## How to use:
+
+
+```{r installation, eval = FALSE}
+devtools::install_github("nourqweder/RAPI", build_vignettes = TRUE)
+```
+
+
+
 ## Introduction
+Depending on *Google geocode API technique* to get Location by the coordinator and vice verse, side beside with *leaflet* package to draw the map and get different display mode according to the provider from package itself.
+
+
+```{r, eval = FALSE}
+#  https://maps.googleapis.com/maps/api/geocode/json?parameters
+```
+
+Now, our package *RAPI* works as a  linker between the user and the Google Geocoding API. 
