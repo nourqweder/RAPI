@@ -11,14 +11,13 @@
 #'@title geocodeBylatlng
 #'@description Returns address of the given latitude and longitude.
 #'@param latlng Character class of latitude and longitude separated by ","
-#' @param key need a vaild API key from user
+#' param key need a vaild API key from user
 #'@export
 #'@import jsonlite curl
 #'@return Character class of the address of the given latitude and longitude.
 #'@examples 
 #'geocodeBylatlng("37.56654, 126.978", key="AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
 #'geocodeBylatlng("37.55723, 127.0453")
-
 geocodeBylatlng <- function(latlng) {
   
   stopifnot(is.character(latlng))
