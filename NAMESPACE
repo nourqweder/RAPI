@@ -2,6 +2,7 @@
 
 export(geocodeBylatlng)
 export(getAddressInfoByLocation)
+export(getDataFromCSV)
 export(getInforFromInput)
 export(readCSVFile)
 import(curl)

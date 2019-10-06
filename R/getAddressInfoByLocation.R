@@ -12,7 +12,7 @@
 #'@description Returns latitude and longitude of the given input location.
 #'@param location Character class of location address
 #'@export
-#'@import jsonlite curl
+#'@import jsonlite 
 #'@return A data.frame contains address, latitude and longitude of given location.
 #'@examples 
 #'getAddressInfoByLocation("Mjölby")
