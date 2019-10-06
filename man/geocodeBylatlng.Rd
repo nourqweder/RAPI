@@ -4,7 +4,7 @@
 \alias{geocodeBylatlng}
 \title{geocodeBylatlng}
 \usage{
-geocodeBylatlng(latlng, key)
+geocodeBylatlng(latlng)
 }
 \arguments{
 \item{latlng}{Character class of latitude and longitude separated by ","}
@@ -18,6 +18,6 @@ Character class of the address of the given latitude and longitude.
 Returns address of the given latitude and longitude.
 }
 \examples{
-geocodeBylatlng("37.56654, 126.978")
+geocodeBylatlng("37.56654, 126.978", key="AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
 geocodeBylatlng("37.55723, 127.0453")
 }

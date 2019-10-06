@@ -18,7 +18,7 @@
 #'getAddressInfoByLocation("Mjölby")
 #'getAddressInfoByLocation("Damascus University")
 
-getAddressInfoByLocation <- function(location,key) {
+getAddressInfoByLocation <- function(location) {
   
   stopifnot(is.character(location))
   
@@ -26,7 +26,7 @@ getAddressInfoByLocation <- function(location,key) {
   location <- gsub(" ","+", location)
   
   gitURL <- "https://maps.googleapis.com/maps/api/geocode/json?location="
-  
+  key <- "&key=AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w"
   responce <- jsonlite::fromJSON(paste0(gitURL, location, key))
   
   stopifnot(responce$status == "OK")

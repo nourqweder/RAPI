@@ -16,10 +16,10 @@
 #'@import jsonlite curl
 #'@return Character class of the address of the given latitude and longitude.
 #'@examples 
-#'geocodeBylatlng("37.56654, 126.978")
+#'geocodeBylatlng("37.56654, 126.978", key="AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w")
 #'geocodeBylatlng("37.55723, 127.0453")
 
-geocodeBylatlng <- function(latlng,key) {
+geocodeBylatlng <- function(latlng) {
   
   stopifnot(is.character(latlng))
   
@@ -27,7 +27,7 @@ geocodeBylatlng <- function(latlng,key) {
   latlng <- gsub(" ","", latlng)
   
   gitURL <- "https://maps.googleapis.com/maps/api/geocode/json?latlng="
-  
+  key <- "&key=AIzaSyCbnQWy0geP8Md3nJxfHevjKSx9TK3xI_w"
   responce <- jsonlite::fromJSON(paste0(gitURL, latlng, key))
   
   stopifnot(responce$status == "OK")
