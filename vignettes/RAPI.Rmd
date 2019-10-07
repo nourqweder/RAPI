@@ -53,6 +53,7 @@ As above mentioned, `RAPI` works as a  linker between the users and the Google G
  Followings are examples:
  
 `getAddressInfoByLocation("Mjölby")`
+ 
 `getAddressInfoByLocation("Damascus University")`
 
 ### getInforFromInput
